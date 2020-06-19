@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+<style>
+        body {
+            padding: 0;
+            margin:0;
+            background: linear-gradient(to right, #becc62, #596122,#a9bd24);
+        }
+    .heading {
+        margin: 60px 0 0 400px;
+        color:white;
+        font-size: 2rem;
+    }
+        #myMap {
+            width: 40vw;
+            height: 30vw;
+            margin: 0 auto;
+            background: white;
+            margin-top: 50px;
+            color:black;
+            border: 5px solid white;
+            box-shadow: 15px 25px 10px;  #888888;
+             }
+    </style>
+</head>
+<body>
+   <div class="container">
+      <h1 class="heading">fully working map within 50 lines of code</h1>
+       <div id="myMap"></div>
+   </div>
+    <script>
+       const issmap = L.map('myMap').setView([51.505, -0.09], 13);
+       const attribution = ' &copy; <a href="https://www.openstreetmap.org/copyright"> open street</a> contributors';
+        
+        
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl,{attribution});
+        tiles.addTo(issmap);
+    </script>
+</body>
+</html>
